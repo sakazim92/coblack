@@ -1,10 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CoBlack – Coming Soon</title>
+  <style>
+    :root {
+      --green: #6d8c66;
+      --black: #000000;
+      --white: #ffffff;
+      --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, var(--white), #f4f4f4);
+      font-family: var(--font);
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      color: var(--black);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    img.logo {
+      max-width: 480px;
+      width: 90%;
+      margin-bottom: 1.2rem;
+      animation: slideDown 1s ease-out;
+    }
+
+    .tagline {
+      font-size: 1.6rem;
+      color: var(--green);
+      margin-bottom: 3rem;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .coming-soon {
+      font-size: 2rem;
+      color: var(--black);
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--black);
+      width: 0;
+      animation: typing 3s steps(20, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 11ch } /* "Coming Soon" has 11 characters */
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Site!</h1>
-  <p>This is hosted on GitHub Pages.</p>
+  <div class="container">
+    <img src="main-logo.png" alt="CoBlack Logo" class="logo" />
+    <div class="tagline">Opportunity starts here.</div>
+    <div class="coming-soon">Coming Soon</div>
+    <footer>© 2025 CoBlack Corp.</footer>
+  </div>
 </body>
 </html>
